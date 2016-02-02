@@ -15,12 +15,3 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
-*.sdf
-*.suo
-*.sln
-
-#UE4 Files
-/Binaries
-/DerivedDataCache
-/Intermediate
-/Saved
