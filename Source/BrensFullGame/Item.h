@@ -8,7 +8,7 @@
 UCLASS()
 class BRENSFULLGAME_API AItem : public AActor
 {
-	GENERATED_BODY()
+	GENERATED_BODY() 
 	
 public:	
 	// Sets default values for this actor's properties
@@ -20,6 +20,23 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	
+	/* Accessor function for the pickup mesh */
+	FORCEINLINE class UStaticMeshComponent* GetMesh() const { return ItemMesh; }
+
+	UFUNCTION(BlueprintPure, Category = "Item")
+	bool IsActive();
+
+	UFUNCTION(BlueprintCallable, Category = "Item")
+	void SetActive(bool NewItemState);
+
+protected:
+
+	/* True when item can be used, falsed when it is deactivated */
+	bool bIsActive;
+
+private:
+	/* Mesh to represent item in level */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item", meta = (AllowPrivateAccess = "true"))
+	class UStaticMeshComponent* ItemMesh;
 	
 };

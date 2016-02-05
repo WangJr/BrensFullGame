@@ -8,7 +8,13 @@
 AItem::AItem()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
+
+	// Create the static mesh component
+	ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Item Mesh"));
+	RootComponent = ItemMesh;
+
+	bIsActive = true;
 
 }
 
@@ -26,3 +32,14 @@ void AItem::Tick( float DeltaTime )
 
 }
 
+// Return active state
+bool AItem::IsActive()
+{
+	return bIsActive;
+}
+
+// Set new active state
+void AItem::SetActive(bool NewItemState)
+{
+	bIsActive = NewItemState;
+}
