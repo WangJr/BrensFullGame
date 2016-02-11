@@ -28,6 +28,9 @@ ABCharacter::ABCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component(inherited from Character)
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+
+	IsItemHeld = false;
+	ItemType = 0;
 }
 
 // Called to bind functionality to input
@@ -111,4 +114,11 @@ void ABCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void ABCharacter::SetValues(AItem* Item, uint8 TypeOfItem, bool ItemHeld)
+{
+	HeldItem = Item;
+	ItemType = TypeOfItem;
+	IsItemHeld = ItemHeld;
 }

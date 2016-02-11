@@ -14,8 +14,16 @@ public:
 	// Sets default values for this character's properties
 	ABCharacter();
 
-	UPROPERTY(EditAnywhere, Category = "Weapons", BlueprintReadWrite)
-	class AActor* HeldItem;
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	bool IsItemHeld;
+	
+	//Held Item type
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	uint8 ItemType;
+
+	// Refrence to Item_BP Character is currently holding
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	class AItem* HeldItem;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
@@ -27,6 +35,9 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseLookUpRate;
+
+	UFUNCTION(BlueprintCallable, Category = "Item")
+	void SetValues(AItem* Item, uint8 TypeOfItem, bool IsHoldingItem);
 
 protected:
 

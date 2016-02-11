@@ -20,23 +20,22 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	/* Accessor function for the pickup mesh */
-	FORCEINLINE class UStaticMeshComponent* GetMesh() const { return ItemMesh; }
-
 	UFUNCTION(BlueprintPure, Category = "Item")
 	bool IsActive();
 
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	void SetActive(bool NewItemState);
 
-	/* Mesh to represent item in level */
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item", meta = (AllowPrivateAccess = "true"))
-	class UStaticMeshComponent* ItemMesh;
-
+	
 protected:
 
 	/* True when item can be used, falsed when it is deactivated */
 	bool bIsActive;
+
+	// 8-bit variable to control the item type
+	//For now: 0 - Regular Item, 1 - Melee Weapon, 2 - Rifle, more to come.
+	UPROPERTY(EditAnywhere, Category = "New", BlueprintReadOnly)
+	uint8 ItemType;
 
 private:
 	

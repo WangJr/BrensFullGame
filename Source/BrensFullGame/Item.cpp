@@ -10,11 +10,9 @@ AItem::AItem()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	// Create the static mesh component
-	ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Item Mesh"));
-	RootComponent = ItemMesh;
-
 	bIsActive = true;
+
+	ItemType = 0;
 
 }
 
