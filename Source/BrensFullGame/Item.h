@@ -29,14 +29,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	void SetActive(bool NewItemState);
 
+	/* Mesh to represent item in level */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item", meta = (AllowPrivateAccess = "true"))
+	class UStaticMeshComponent* ItemMesh;
+
 protected:
 
 	/* True when item can be used, falsed when it is deactivated */
 	bool bIsActive;
 
 private:
-	/* Mesh to represent item in level */
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item", meta = (AllowPrivateAccess = "true"))
-	class UStaticMeshComponent* ItemMesh;
+	
 	
 };

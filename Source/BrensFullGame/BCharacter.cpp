@@ -2,6 +2,7 @@
 
 #include "BrensFullGame.h"
 #include "BCharacter.h"
+#include "Item.h"
 
 
 // Sets default values
