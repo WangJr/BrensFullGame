@@ -6,8 +6,8 @@
 ADItem::ADItem()
 {
 	// Create the static mesh component
-	DItemMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Item Mesh"));
-	RootComponent = DItemMesh;
+	DItemCollision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Item Collision"));
+	//RootComponent = DItemCollision;
 }
 
 void ADItem::BeginPlay()
