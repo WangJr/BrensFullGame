@@ -4,9 +4,6 @@
 #include "BCharacter.h"
 #include "Item.h"
 
-UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
-int MaxAmmo;
-
 // Sets default values
 ABCharacter::ABCharacter()
 {

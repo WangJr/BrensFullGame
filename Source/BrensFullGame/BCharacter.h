@@ -24,6 +24,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	uint8 Ammo;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = Test)
+	int32 Aimo;
+
 	// Refrence to Item_BP Character is currently holding
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	class AItem* HeldItem;
