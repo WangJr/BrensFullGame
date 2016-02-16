@@ -22,10 +22,10 @@ class BRENSFULLGAME_API ADItem : public AItem
 	virtual void Tick(float DeltaSeconds) override;
 
 	/* Accessor function for the pickup mesh */
-	FORCEINLINE class USkeletalMeshComponent* GetMesh() const { return DItemMesh; }
+	FORCEINLINE class UCapsuleComponent* GetCollision() const { return DItemCollision; }
 
 	/* Mesh to represent item in level */
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item", meta = (AllowPrivateAccess = "true"))
-	class USkeletalMeshComponent* DItemMesh;
+	class UCapsuleComponent* DItemCollision;
 	
 };
