@@ -14,6 +14,23 @@ public:
 	// Sets default values for this character's properties
 	ABCharacter();
 
+	// Variable Controlling Current health
+	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
+	uint8 CurrentHealth;
+
+	// Variable Controlling Max health
+	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
+	uint8 MaxtHealth;
+
+	// Variable Controlling Current Stamina
+	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
+	uint8 CurrentStamina;
+
+	// Variable Controlling Max Stamina
+	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
+	uint8 MaxStamina;
+
+	// Bool controlling whether Item is held or not
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	bool IsItemHeld;
 	
@@ -21,16 +38,19 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	uint8 ItemType;
 
-	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
-	uint8 Ammo;
-
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = Test)
-	int32 Aimo;
-
 	// Refrence to Item_BP Character is currently holding
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	class AItem* HeldItem;
 
+	// Current Value for held Ammo
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	uint8 Ammo;
+
+	// Max capacity for Ammo
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	int32 MaxAmmo;
+
+	// Clip size of currenty weapon
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	uint8 ClipCap;
 
@@ -38,13 +58,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseTurnRate;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = TestCat)
-	float TestValue;
-
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseLookUpRate;
 
+	// Function to get all the basic info for a Picked Up item
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	void SetValues(AItem* Item, uint8 TypeOfItem, bool IsHoldingItem);
 
