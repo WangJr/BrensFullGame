@@ -21,9 +21,15 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	uint8 ItemType;
 
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	uint8 Ammo;
+
 	// Refrence to Item_BP Character is currently holding
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	class AItem* HeldItem;
+
+	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
+	uint8 ClipCap;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
