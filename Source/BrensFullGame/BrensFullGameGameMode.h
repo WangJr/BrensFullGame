@@ -10,6 +10,19 @@ class ABrensFullGameGameMode : public AGameMode
 
 public:
 	ABrensFullGameGameMode();
+
+	virtual void BeginPlay() override;
+
+protected:
+
+	/* Widget Class to use for our HUD Screen */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "HUD", Meta = (BlueprintProtected = "true"))
+	TSubclassOf<class UUserWidget> HUDWidgetClass;
+
+	/* The instance of the HUD */
+	UPROPERTY()
+	class UUserWidget* CurrentWidget;
+
 };
 
 

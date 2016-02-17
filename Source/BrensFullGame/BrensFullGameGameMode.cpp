@@ -3,6 +3,7 @@
 #include "BrensFullGame.h"
 #include "BrensFullGameGameMode.h"
 #include "BrensFullGameCharacter.h"
+#include "Blueprint/UserWidget.h"
 
 ABrensFullGameGameMode::ABrensFullGameGameMode()
 {
@@ -12,4 +13,19 @@ ABrensFullGameGameMode::ABrensFullGameGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+}
+
+void ABrensFullGameGameMode::BeginPlay()
+{
+	Super::BeginPlay();
+	 
+	if (HUDWidgetClass != nullptr)
+	{
+		CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), HUDWidgetClass);
+		if (CurrentWidget != nullptr)
+		{
+			CurrentWidget->AddToViewport();
+		}
+	}
+
 }
