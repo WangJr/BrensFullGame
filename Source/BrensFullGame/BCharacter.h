@@ -42,18 +42,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	class AItem* HeldItem;
 
-	// Current Value for held Ammo
-	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
-	uint8 Ammo;
-
-	// Max capacity for Ammo
-	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
-	int32 MaxAmmo;
-
-	// Clip size of currenty weapon
-	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
-	uint8 ClipCap;
-
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseTurnRate;

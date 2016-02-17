@@ -38,10 +38,6 @@ ABCharacter::ABCharacter()
 	MaxStamina = 100;
 	CurrentStamina = MaxStamina;
 
-	/* Ammo Info */
-
-	Ammo = 0;
-
 	/* Held Item */
 	IsItemHeld = false;
 	ItemType = 0;
