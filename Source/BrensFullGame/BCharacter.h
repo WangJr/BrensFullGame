@@ -61,6 +61,11 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseLookUpRate;
+	
+	// Returns Current Health to be Used in HUD
+	// UFUNCTION(BlueprintCallable, Category = "Health")
+	// float GetCurrentHealth();
+	
 
 	// Function to get all the basic info for a Picked Up item
 	UFUNCTION(BlueprintCallable, Category = "Item")

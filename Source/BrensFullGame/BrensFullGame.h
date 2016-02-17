@@ -3,6 +3,6 @@
 #ifndef __BRENSFULLGAME_H__
 #define __BRENSFULLGAME_H__
 
-#include "EngineMinimal.h"
+#include "Engine.h"
 
 #endif
