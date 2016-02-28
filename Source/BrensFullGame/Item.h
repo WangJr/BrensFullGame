@@ -26,7 +26,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	void SetActive(bool NewItemState);
 
-	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	bool bIsInCombatMode;
+
 protected:
 
 	/* True when item can be used, falsed when it is deactivated */

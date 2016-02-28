@@ -14,6 +14,8 @@ AItem::AItem()
 
 	ItemType = 0;
 
+	bIsInCombatMode = false;
+
 }
 
 // Called when the game starts or when spawned
