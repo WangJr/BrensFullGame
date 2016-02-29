@@ -49,15 +49,32 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float BaseLookUpRate;
+
+	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
+	uint8 DamageBase;
+
+	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
+	uint8 AgentType;
+
+	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
+	float DamageDuration;
 	
+	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
+	class AItem* AgentOfDamage;
+
 	// Returns Current Health to be Used in HUD
 	// UFUNCTION(BlueprintCallable, Category = "Health")
 	// float GetCurrentHealth();
-	
 
 	// Function to get all the basic info for a Picked Up item
 	UFUNCTION(BlueprintCallable, Category = "Item")
 	void SetValues(AItem* Item, uint8 TypeOfItem, bool IsHoldingItem);
+
+	UFUNCTION(BlueprintCallable, Category = "Damage")
+	void SetPlayerDamage(uint8 BaseDamage, uint8 DamageType, float Duration, AItem* Hitter);
+
+	//UFUNCTION(Category = "Damage")
+	//void SetDamageValues(AItem* Instigator, uint8 DamageType, uint8 BaseDamage, float Duration);
 
 protected:
 

@@ -41,6 +41,8 @@ ABCharacter::ABCharacter()
 	/* Held Item */
 	IsItemHeld = false;
 	ItemType = 0;
+
+	/* Damage */
 }
 
 // Called to bind functionality to input
@@ -126,9 +128,25 @@ void ABCharacter::MoveRight(float Value)
 	}
 }
 
+/*void ABCharacter::SetDamageValues(AItem* Instigator, uint8 DamageType, uint8 BaseDamage, float Duration)
+{
+	AgentOfDamage = Instigator;
+	AgentType = DamageType;
+	DamageBase = BaseDamage;
+	DamageDuration = Duration;
+}*/
+
 void ABCharacter::SetValues(AItem* Item, uint8 TypeOfItem, bool ItemHeld)
 {
 	HeldItem = Item;
 	ItemType = TypeOfItem;
 	IsItemHeld = ItemHeld;
+}
+
+void ABCharacter::SetPlayerDamage(uint8 BaseDamage, uint8 DamageType, float Duration, AItem* Hitter)
+{
+	DamageBase = BaseDamage;
+	AgentType = DamageType;
+	DamageDuration = Duration;
+	AgentOfDamage = Hitter;
 }
