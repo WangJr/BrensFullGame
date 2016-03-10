@@ -14,6 +14,8 @@ AItem::AItem()
 
 	ItemType = 0;
 
+	ItemSize = 3;
+
 	bIsInCombatMode = false;
 
 }

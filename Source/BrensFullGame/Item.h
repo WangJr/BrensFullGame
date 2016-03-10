@@ -36,8 +36,11 @@ protected:
 
 	// 8-bit variable to control the item type
 	//For now: 0 - Regular Item, 1 - Melee Weapon, 2 - Rifle, more to come.
-	UPROPERTY(EditAnywhere, Category = "New", BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, Category = "Properties", BlueprintReadOnly)
 	uint8 ItemType;
+
+	UPROPERTY(EditAnywhere, Category = "Properties", BlueprintReadWrite)
+	uint8 ItemSize;
 
 private:
 	
