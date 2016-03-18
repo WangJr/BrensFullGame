@@ -31,6 +31,10 @@ public:
 	uint8 MaxStamina;
 
 	// Bool controlling whether Item is held or not
+	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
+	bool TD;
+
+	// Bool controlling whether Item is held or not
 	UPROPERTY(EditAnywhere, Category = "Held Item", BlueprintReadWrite)
 	bool IsItemHeld;
 	

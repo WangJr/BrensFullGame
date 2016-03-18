@@ -38,6 +38,8 @@ ABCharacter::ABCharacter()
 	MaxStamina = 100;
 	CurrentStamina = MaxStamina;
 
+	TD = false;
+
 	/* Held Item */
 	IsItemHeld = false;
 	ItemType = 0;
