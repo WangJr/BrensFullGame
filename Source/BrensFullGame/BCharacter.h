@@ -16,19 +16,19 @@ public:
 
 	// Variable Controlling Current health
 	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
-	uint8 CurrentHealth;
+	float CurrentHealth;
 
 	// Variable Controlling Max health
 	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
-	uint8 MaxtHealth;
+	float MaxtHealth;
 
 	// Variable Controlling Current Stamina
 	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
-	uint8 CurrentStamina;
+	float CurrentStamina;
 
 	// Variable Controlling Max Stamina
 	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
-	uint8 MaxStamina;
+	float MaxStamina;
 
 	// Bool controlling whether Item is held or not
 	UPROPERTY(EditAnywhere, Category = "Main", BlueprintReadWrite)
