@@ -145,7 +145,7 @@ void ABCharacter::SetValues(AItem* Item, uint8 TypeOfItem, bool ItemHeld)
 	IsItemHeld = ItemHeld;
 }
 
-void ABCharacter::SetPlayerDamage(uint8 BaseDamage, uint8 DamageType, float Duration, AItem* Hitter)
+void ABCharacter::SetPlayerDamage(float BaseDamage, uint8 DamageType, float Duration, AItem* Hitter)
 {
 	DamageBase = BaseDamage;
 	AgentType = DamageType;

@@ -55,7 +55,7 @@ public:
 	float BaseLookUpRate;
 
 	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
-	uint8 DamageBase;
+	float DamageBase;
 
 	UPROPERTY(EditAnywhere, Category = "Damage", BlueprintReadWrite)
 	uint8 AgentType;
@@ -75,7 +75,7 @@ public:
 	void SetValues(AItem* Item, uint8 TypeOfItem, bool IsHoldingItem);
 
 	UFUNCTION(BlueprintCallable, Category = "Damage")
-	void SetPlayerDamage(uint8 BaseDamage, uint8 DamageType, float Duration, AItem* Hitter);
+	void SetPlayerDamage(float BaseDamage, uint8 DamageType, float Duration, AItem* Hitter);
 
 	//UFUNCTION(Category = "Damage")
 	//void SetDamageValues(AItem* Instigator, uint8 DamageType, uint8 BaseDamage, float Duration);
